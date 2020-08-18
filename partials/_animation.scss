@@ -1,0 +1,38 @@
+@include keyframes(rotate-vertical-center){
+	0% {
+		@include prefix( transform, translateY(-50%) scale(1) rotate(0) );
+	}
+	100% {
+		@include prefix( transform, translateY(-50%) scale(1) rotate(360deg) );
+	}
+}
+
+@include keyframes(rotate-absolute-center){
+	0% {
+		@include prefix( transform, translate(-50%, -50%) scale(1) rotate(0) );
+	}
+	100% {
+		@include prefix( transform, translate(-50%, -50%) scale(1) rotate(360deg) );
+	}
+}
+
+@include keyframes( vibrate ){
+	0% {
+		@include prefix( transform, translate(0) );
+	}
+	20% {
+		@include prefix( transform, translate(-2px, 2px) );
+	}
+	40% {
+		@include prefix( transform, translate(-2px, -2px) );
+	}
+	60% {
+		@include prefix( transform, translate(2px, 2px) );
+		}
+	80% {
+		@include prefix( transform, translate(2px, -2px) );
+		}
+	100% {
+		@include prefix( transform, translate(0) );
+	}
+}
