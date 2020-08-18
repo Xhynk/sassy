@@ -1,0 +1,88 @@
+$displays:   'flex', 'inline-flex';
+$directions: ('col': 'column', 'row': 'row');
+$ordinals:   ('top': 'bottom', 'left': 'right');
+$wraps:      'wrap', 'nowrap', 'wrap-reverse';
+$justifies:  'center', 'start', 'end', 'flex-start', 'flex-end', 'left', 'right', 'normal', 'space-between', 'space-around', 'space-evenly', 'stretch', 'inherit', 'initial', 'unset';
+$aligns:     'normal', 'stretch', 'center', 'start', 'end', 'flex-start', 'flex-end', 'baseline', 'inherit', 'initial', 'unset';
+$fills:      'grow', 'shrink';
+
+@each $display in $displays {
+	$inline: if( $display == 'inline-flex', 'inline-', '' );
+
+	.#{$display},
+	[data-#{$display}],
+	[class^="#{$display}-"],
+	[class*=" #{$display}-"],
+	.#{$display}-children > *,
+	[data-#{$display}-children] > * {
+		display: -webkit-#{$inline}box;
+		display: -moz-#{$inline}box;
+		display: -webkit-#{$inline}flex;
+		display: -ms-#{$inline}flexbox;
+		display: #{$inline}flex;
+	}
+}
+
+@each $dir, $full in $directions {
+	.flex-#{$dir},
+	[data-flex-#{$dir}] {
+		flex-direction: #{$full};
+	}
+
+	.flex-#{$dir}-reverse,
+	.flex-#{$dir}.reverse,
+	[data-flex-#{$dir}-reverse]
+	[data-flex-#{$dir}][data-reverse] {
+		flex-direction: #{$full}-reverse;
+	}
+}
+
+@each $x, $y in $ordinals {
+	.flex-#{$x},
+	[data-flex-#{$x}] {
+		margin-#{$y}: auto;
+	}
+
+	.flex-#{$y},
+	[data-flex-#{$y}] {
+		margin-#{$x}: auto;
+	}
+}
+
+@each $wrap in $wraps {
+	#{$wrap},
+	[data-#{$wrap}],
+	.flex-#{$wrap},
+	[data-flex-#{$wrap}] {
+		flex-wrap: $wrap;
+	}
+}
+
+@each $justify in $justifies {
+	$label: if( str-index($justify,'-'), $label, 'justify-#{$label}') ); // I prefer "space-between/around"
+	
+	.#{$label},
+	[data-#{$label}],
+	.#{$label}-children > *,
+	[data-#{$label}-children > *] {
+		justify-content: $justify;
+	}
+}
+
+@each $align in $aligns { // no str-index because I use align-items: flex-start values less often
+	.align-#{$align},
+	[data-align-#{$align}],
+	.align-#{$align}-children > *,
+	[data-align-#{$align}-children] > * {
+		align-items: $align;
+	}
+}
+
+@each $fill in $fills {
+	.flex-#{$fill},
+	[data-flex-#{$fill}],
+	.align-#{$fill}-children > *,
+	[data-align-#{$fill}-children] > * {
+		flex-#{$fill}: 1;
+	}
+}

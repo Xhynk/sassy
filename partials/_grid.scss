@@ -1,0 +1,61 @@
+$max-gap:     2;
+$gap-unit:    'em';
+$max-columns: 24;
+
+$gaps: (
+	'gap':       $max-gap + $gap-unit,
+	'small-gap': ($max-gap/2) + $gap-unit,
+	'tiny-gap':  ($max-gap/4) + $gap-unit,
+	'no-gap':    0
+);
+
+.grid, [data-grid] {
+	display: -ms-grid;
+	display:     grid;
+	-ms-grid-columns: 1fr[12];
+	grid-template-columns: repeat(12, 1fr); // 12 is a safe default value
+
+	@each $style, $size in $gaps {
+		&.#{$style}, &[data-#{$style}] {
+			grid-gap: #{$size};
+		}
+	}
+
+	& > .span-all,
+	& > [data-span-all],
+	& > [data-span="all"] {
+		grid-column-start: 1;
+		grid-column-end: -1;
+	}
+}
+
+@for $i from 1 through $max-columns {
+	$i: ($max-columns + 1) - $i; // This gets reversed
+
+	.grid, [data-grid] {
+		&.columns-#{$i}, &[data-columns="#{$i}"] {
+			-ms-grid-columns: 1fr[$i];
+			grid-template-columns: repeat($i, 1fr);
+
+			& > * {
+				grid-column: auto / span 1;
+				-ms-grid-column-span: 1;
+			}
+		}
+	}
+}
+
+@for $i from 1 through $max-columns {
+	.grid, [data-grid] {
+		& > .span-#{$i},
+		& > [data-span="#{$i}"]{
+			grid-column: auto / span $i;
+			-ms-grid-column-span: $i;
+		}
+
+		& > .offset-#{$i},
+		& > [data-offset="#{$i}"]{
+			grid-column-start: $i + 1;
+		}
+	}
+}
