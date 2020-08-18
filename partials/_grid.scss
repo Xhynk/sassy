@@ -66,5 +66,11 @@ $gaps: (
 		& > [data-offset="#{$i}"] {
 			grid-column-start: $i + 1;
 		}
+
+		& > .row-offset-#{$i},
+		& > [data-row-offset-#{$i}], 
+		& > [data-row-offset="#{$i}"] {
+			grid-row-start: $i + 1;
+		}
 	}
 }
