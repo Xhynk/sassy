@@ -48,13 +48,22 @@ $gaps: (
 @for $i from 1 through $max-columns {
 	.grid, [data-grid] {
 		& > .span-#{$i},
-		& > [data-span="#{$i}"]{
+		& > [data-span-#{$i}],
+		& > [data-span="#{$i}"] {
 			grid-column: auto / span $i;
 			-ms-grid-column-span: $i;
 		}
 
+		& > .row-span-#{$i},
+		& > [data-row-span-#{$i}],
+		& > [data-row-span="#{$i}"] {
+			grid-row: auto / span $i;
+			-ms-grid-row-span: $i;
+		}
+
 		& > .offset-#{$i},
-		& > [data-offset="#{$i}"]{
+		& > [data-offset-#{$i}], 
+		& > [data-offset="#{$i}"] {
 			grid-column-start: $i + 1;
 		}
 	}
