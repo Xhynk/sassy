@@ -54,18 +54,18 @@ $fills:      'grow', 'shrink';
 	[data-#{$wrap}],
 	.flex-#{$wrap},
 	[data-flex-#{$wrap}] {
-		flex-wrap: $wrap;
+		flex-wrap: #{$wrap};
 	}
 }
 
 @each $justify in $justifies {
-	$label: if( str-index($justify,'-'), $label, 'justify-#{$label}') ); // I prefer "space-between/around"
+	$label: if( str-index($justify, '-'), $justify, 'justify-' + $justify );
 	
 	.#{$label},
 	[data-#{$label}],
 	.#{$label}-children > *,
-	[data-#{$label}-children > *] {
-		justify-content: $justify;
+	[data-#{$label}-children] > * {
+		justify-content: #{$justify};
 	}
 }
 
@@ -74,7 +74,7 @@ $fills:      'grow', 'shrink';
 	[data-align-#{$align}],
 	.align-#{$align}-children > *,
 	[data-align-#{$align}-children] > * {
-		align-items: $align;
+		align-items: #{$align};
 	}
 }
 
