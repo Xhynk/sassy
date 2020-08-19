@@ -64,13 +64,13 @@ $gaps: (
 		& > .offset-#{$i},
 		& > [data-offset-#{$i}], 
 		& > [data-offset="#{$i}"] {
-			grid-column-start: $i + 1;
+			grid-column-start: $i + 1 !important;
 		}
 
 		& > .row-offset-#{$i},
 		& > [data-row-offset-#{$i}], 
 		& > [data-row-offset="#{$i}"] {
-			grid-row-start: $i + 1;
+			grid-row-start: $i + 1 !important;
 		}
 	}
 }
