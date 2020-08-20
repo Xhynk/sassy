@@ -9,10 +9,10 @@ $pm: padding, margin;
 }
 
 @each $x in $pm {
+	.#{$x}-0 {
+		#{$x}: 0;
+	}
 	@each $dir in $trbl {
-		.#{$x}-0 {
-			#{$x}: 0;
-		}
 
 		.#{$x}-#{$dir}-0 {
 			#{$x}-#{$dir}: 0;
