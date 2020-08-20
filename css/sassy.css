@@ -1,6 +1,6 @@
 .flex,
-[class^=flex-],
-[class*=" flex-"],
+[class^=flex],
+[class*=" flex"],
 .flex-children > * {
   display: -webkit-box;
   display: -moz-box;
@@ -10,8 +10,8 @@
 }
 
 .inline-flex,
-[class^=inline-flex-],
-[class*=" inline-flex-"],
+[class^=inline-flex],
+[class*=" inline-flex"],
 .inline-flex-children > * {
   display: -webkit-inline-box;
   display: -moz-inline-box;

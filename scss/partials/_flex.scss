@@ -8,10 +8,11 @@ $fills:      'grow', 'shrink';
 
 @each $display in $displays {
 	$inline: if( $display == 'inline-flex', 'inline-', '' );
+	$class:  if( $display == 'inline-flex', '', '-' );
 
 	.#{$display},
-	[class^="#{$display}-"],
-	[class*=" #{$display}-"],
+	[class^="#{$display}"],
+	[class*=" #{$display}"],
 	.#{$display}-children > * {
 		display: -webkit-#{$inline}box;
 		display: -moz-#{$inline}box;
