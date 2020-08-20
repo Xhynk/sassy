@@ -10,11 +10,9 @@ $fills:      'grow', 'shrink';
 	$inline: if( $display == 'inline-flex', 'inline-', '' );
 
 	.#{$display},
-	[data-#{$display}],
 	[class^="#{$display}-"],
 	[class*=" #{$display}-"],
-	.#{$display}-children > *,
-	[data-#{$display}-children] > * {
+	.#{$display}-children > * {
 		display: -webkit-#{$inline}box;
 		display: -moz-#{$inline}box;
 		display: -webkit-#{$inline}flex;
@@ -24,36 +22,29 @@ $fills:      'grow', 'shrink';
 }
 
 @each $dir, $full in $directions {
-	.flex-#{$dir},
-	[data-flex-#{$dir}] {
+	.flex-#{$dir} {
 		flex-direction: #{$full};
 	}
 
 	.flex-#{$dir}-reverse,
-	.flex-#{$dir}.reverse,
-	[data-flex-#{$dir}-reverse]
-	[data-flex-#{$dir}][data-reverse] {
+	.flex-#{$dir}.reverse {
 		flex-direction: #{$full}-reverse;
 	}
 }
 
 @each $x, $y in $ordinals {
-	.flex-#{$x},
-	[data-flex-#{$x}] {
+	.flex-#{$x} {
 		margin-#{$y}: auto;
 	}
 
-	.flex-#{$y},
-	[data-flex-#{$y}] {
+	.flex-#{$y} {
 		margin-#{$x}: auto;
 	}
 }
 
 @each $wrap in $wraps {
 	#{$wrap},
-	[data-#{$wrap}],
-	.flex-#{$wrap},
-	[data-flex-#{$wrap}] {
+	.flex-#{$wrap} {
 		flex-wrap: #{$wrap};
 	}
 }
@@ -62,27 +53,21 @@ $fills:      'grow', 'shrink';
 	$label: if( str-index($justify, '-'), $justify, 'justify-' + $justify );
 	
 	.#{$label},
-	[data-#{$label}],
-	.#{$label}-children > *,
-	[data-#{$label}-children] > * {
+	.#{$label}-children > * {
 		justify-content: #{$justify};
 	}
 }
 
-@each $align in $aligns { // no str-index because I use align-items: flex-start values less often
+@each $align in $aligns {
 	.align-#{$align},
-	[data-align-#{$align}],
-	.align-#{$align}-children > *,
-	[data-align-#{$align}-children] > * {
+	.align-#{$align}-children > * {
 		align-items: #{$align};
 	}
 }
 
 @each $fill in $fills {
 	.flex-#{$fill},
-	[data-flex-#{$fill}],
-	.align-#{$fill}-children > *,
-	[data-align-#{$fill}-children] > * {
+	.align-#{$fill}-children > * {
 		flex-#{$fill}: 1;
 	}
 }

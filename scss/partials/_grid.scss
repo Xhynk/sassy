@@ -1,76 +1,47 @@
 $max-gap:     2;
-$gap-unit:    'em';
+$gap-unit:    em;
 $max-columns: 24;
 
 $gaps: (
-	'gap':       $max-gap + $gap-unit,
-	'small-gap': ($max-gap/2) + $gap-unit,
-	'tiny-gap':  ($max-gap/4) + $gap-unit,
-	'no-gap':    0
+	gap:       $max-gap + $gap-unit,
+	small-gap: ($max-gap / 2) + $gap-unit,
+	tiny-gap:  ($max-gap / 4) + $gap-unit,
+	no-gap:    0
 );
 
-.grid, [data-grid] {
-	display: -ms-grid;
-	display:     grid;
-	-ms-grid-columns: 1fr[12];
+.grid        { display: grid; }
+.inline-grid { display: inline-grid; }
+
+.grid,
+.inline-grid {
 	grid-template-columns: repeat(12, 1fr); // 12 is a safe default value
 
 	@each $style, $size in $gaps {
-		&.#{$style}, &[data-#{$style}] {
+		&.#{$style} {
 			grid-gap: #{$size};
 		}
 	}
 
-	& > .span-all,
-	& > [data-span-all],
-	& > [data-span="all"] {
-		grid-column-start: 1 !important;
-		grid-column-end: -1 !important;
+	& > *.span-all {
+		grid-column-start: 1;
+		grid-column-end: -1;
 	}
 }
 
 @for $i from 1 through $max-columns {
-	$i: ($max-columns + 1) - $i; // This gets reversed
+	$n: ($max-columns + 1) - $i; // Columns is the inverse of this value
 
-	.grid, [data-grid] {
-		&.columns-#{$i}, &[data-columns="#{$i}"] {
-			-ms-grid-columns: 1fr[$i];
-			grid-template-columns: repeat($i, 1fr);
+	.grid,
+	.inline-grid {
+		&.cols-#{$n},
+		&.columns-#{$n} { grid-template-columns: repeat($n, 1fr); }
 
-			& > * {
-				grid-column: auto / span 1;
-				-ms-grid-column-span: 1;
-			}
-		}
-	}
-}
-
-@for $i from 1 through $max-columns {
-	.grid, [data-grid] {
-		& > .span-#{$i},
-		& > [data-span-#{$i}],
-		& > [data-span="#{$i}"] {
+		& > .span-#{$i} {
 			grid-column: auto / span $i;
-			-ms-grid-column-span: $i;
 		}
 
-		& > .row-span-#{$i},
-		& > [data-row-span-#{$i}],
-		& > [data-row-span="#{$i}"] {
-			grid-row: auto / span $i;
-			-ms-grid-row-span: $i;
-		}
-
-		& > .offset-#{$i},
-		& > [data-offset-#{$i}], 
-		& > [data-offset="#{$i}"] {
+		& > .offset-#{$i} {
 			grid-column-start: $i + 1 !important;
-		}
-
-		& > .row-offset-#{$i},
-		& > [data-row-offset-#{$i}], 
-		& > [data-row-offset="#{$i}"] {
-			grid-row-start: $i + 1 !important;
 		}
 	}
 }
