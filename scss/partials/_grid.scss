@@ -42,7 +42,7 @@ $gaps: (
 	}
 }
 
-// This can't be in the above loop because i+1 spans override i offsets
+// This can't be in the above loop because i+1 spans override i+0 offsets
 @for $i from 1 through $max-columns {
 	.grid,
 	.inline-grid {
