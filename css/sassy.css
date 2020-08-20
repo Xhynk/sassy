@@ -655,6 +655,10 @@ wrap-reverse,
   margin-left: 0;
 }
 
+img {
+  max-width: 100%;
+}
+
 .font-0 {
   font-size: 0;
 }
