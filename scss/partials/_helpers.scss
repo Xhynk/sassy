@@ -1,0 +1,55 @@
+$directions: left, center, right;
+$trbl: top, right, bottom, left;
+$pm: padding, margin;
+
+@for $dir in $directions {
+	.text-#{$dir} {
+		text-align: #{$dir};
+	}
+}
+
+@for $x in $pm {
+	@for $dir in $trbl {
+		.#{$x}-0 {
+			#{$x}: 0;
+		}
+
+		.#{$x}-#{$dir}-0 {
+			#{$x}-#{$dir}: 0;
+		}
+	}
+}
+
+.font-0 {
+	font-size: 0;
+}
+
+// Removes from the document flow
+.hidden {
+	display: none;
+}
+
+// Keeps in the document flow
+.invisible {
+	width: 0;
+	height: 0;
+	opacity: 0;
+	pointer-events: none;
+	transform: scale(0);
+	overflow: hidden;
+}
+
+.full {
+	width: 100%;
+}
+
+.circle {
+	border-radius: 1024px;
+	overflow: hidden;
+}
+
+.ellipses {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
