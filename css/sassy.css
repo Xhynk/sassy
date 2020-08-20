@@ -243,9 +243,8 @@ wrap-reverse,
   grid-column-end: -1;
 }
 
-.grid.cols-24, .grid.columns-24,
-.inline-grid.cols-24,
-.inline-grid.columns-24 {
+.grid[class~=columns-24],
+.inline-grid[class~=columns-24] {
   grid-template-columns: repeat(24, 1fr);
 }
 .grid > .span-1,
@@ -253,9 +252,8 @@ wrap-reverse,
   grid-column: auto/span 1;
 }
 
-.grid.cols-23, .grid.columns-23,
-.inline-grid.cols-23,
-.inline-grid.columns-23 {
+.grid[class~=columns-23],
+.inline-grid[class~=columns-23] {
   grid-template-columns: repeat(23, 1fr);
 }
 .grid > .span-2,
@@ -263,9 +261,8 @@ wrap-reverse,
   grid-column: auto/span 2;
 }
 
-.grid.cols-22, .grid.columns-22,
-.inline-grid.cols-22,
-.inline-grid.columns-22 {
+.grid[class~=columns-22],
+.inline-grid[class~=columns-22] {
   grid-template-columns: repeat(22, 1fr);
 }
 .grid > .span-3,
@@ -273,9 +270,8 @@ wrap-reverse,
   grid-column: auto/span 3;
 }
 
-.grid.cols-21, .grid.columns-21,
-.inline-grid.cols-21,
-.inline-grid.columns-21 {
+.grid[class~=columns-21],
+.inline-grid[class~=columns-21] {
   grid-template-columns: repeat(21, 1fr);
 }
 .grid > .span-4,
@@ -283,9 +279,8 @@ wrap-reverse,
   grid-column: auto/span 4;
 }
 
-.grid.cols-20, .grid.columns-20,
-.inline-grid.cols-20,
-.inline-grid.columns-20 {
+.grid[class~=columns-20],
+.inline-grid[class~=columns-20] {
   grid-template-columns: repeat(20, 1fr);
 }
 .grid > .span-5,
@@ -293,9 +288,8 @@ wrap-reverse,
   grid-column: auto/span 5;
 }
 
-.grid.cols-19, .grid.columns-19,
-.inline-grid.cols-19,
-.inline-grid.columns-19 {
+.grid[class~=columns-19],
+.inline-grid[class~=columns-19] {
   grid-template-columns: repeat(19, 1fr);
 }
 .grid > .span-6,
@@ -303,9 +297,8 @@ wrap-reverse,
   grid-column: auto/span 6;
 }
 
-.grid.cols-18, .grid.columns-18,
-.inline-grid.cols-18,
-.inline-grid.columns-18 {
+.grid[class~=columns-18],
+.inline-grid[class~=columns-18] {
   grid-template-columns: repeat(18, 1fr);
 }
 .grid > .span-7,
@@ -313,9 +306,8 @@ wrap-reverse,
   grid-column: auto/span 7;
 }
 
-.grid.cols-17, .grid.columns-17,
-.inline-grid.cols-17,
-.inline-grid.columns-17 {
+.grid[class~=columns-17],
+.inline-grid[class~=columns-17] {
   grid-template-columns: repeat(17, 1fr);
 }
 .grid > .span-8,
@@ -323,9 +315,8 @@ wrap-reverse,
   grid-column: auto/span 8;
 }
 
-.grid.cols-16, .grid.columns-16,
-.inline-grid.cols-16,
-.inline-grid.columns-16 {
+.grid[class~=columns-16],
+.inline-grid[class~=columns-16] {
   grid-template-columns: repeat(16, 1fr);
 }
 .grid > .span-9,
@@ -333,9 +324,8 @@ wrap-reverse,
   grid-column: auto/span 9;
 }
 
-.grid.cols-15, .grid.columns-15,
-.inline-grid.cols-15,
-.inline-grid.columns-15 {
+.grid[class~=columns-15],
+.inline-grid[class~=columns-15] {
   grid-template-columns: repeat(15, 1fr);
 }
 .grid > .span-10,
@@ -343,9 +333,8 @@ wrap-reverse,
   grid-column: auto/span 10;
 }
 
-.grid.cols-14, .grid.columns-14,
-.inline-grid.cols-14,
-.inline-grid.columns-14 {
+.grid[class~=columns-14],
+.inline-grid[class~=columns-14] {
   grid-template-columns: repeat(14, 1fr);
 }
 .grid > .span-11,
@@ -353,9 +342,8 @@ wrap-reverse,
   grid-column: auto/span 11;
 }
 
-.grid.cols-13, .grid.columns-13,
-.inline-grid.cols-13,
-.inline-grid.columns-13 {
+.grid[class~=columns-13],
+.inline-grid[class~=columns-13] {
   grid-template-columns: repeat(13, 1fr);
 }
 .grid > .span-12,
@@ -363,9 +351,8 @@ wrap-reverse,
   grid-column: auto/span 12;
 }
 
-.grid.cols-12, .grid.columns-12,
-.inline-grid.cols-12,
-.inline-grid.columns-12 {
+.grid[class~=columns-12],
+.inline-grid[class~=columns-12] {
   grid-template-columns: repeat(12, 1fr);
 }
 .grid > .span-13,
@@ -373,9 +360,8 @@ wrap-reverse,
   grid-column: auto/span 13;
 }
 
-.grid.cols-11, .grid.columns-11,
-.inline-grid.cols-11,
-.inline-grid.columns-11 {
+.grid[class~=columns-11],
+.inline-grid[class~=columns-11] {
   grid-template-columns: repeat(11, 1fr);
 }
 .grid > .span-14,
@@ -383,9 +369,8 @@ wrap-reverse,
   grid-column: auto/span 14;
 }
 
-.grid.cols-10, .grid.columns-10,
-.inline-grid.cols-10,
-.inline-grid.columns-10 {
+.grid[class~=columns-10],
+.inline-grid[class~=columns-10] {
   grid-template-columns: repeat(10, 1fr);
 }
 .grid > .span-15,
@@ -393,9 +378,8 @@ wrap-reverse,
   grid-column: auto/span 15;
 }
 
-.grid.cols-9, .grid.columns-9,
-.inline-grid.cols-9,
-.inline-grid.columns-9 {
+.grid[class~=columns-9],
+.inline-grid[class~=columns-9] {
   grid-template-columns: repeat(9, 1fr);
 }
 .grid > .span-16,
@@ -403,9 +387,8 @@ wrap-reverse,
   grid-column: auto/span 16;
 }
 
-.grid.cols-8, .grid.columns-8,
-.inline-grid.cols-8,
-.inline-grid.columns-8 {
+.grid[class~=columns-8],
+.inline-grid[class~=columns-8] {
   grid-template-columns: repeat(8, 1fr);
 }
 .grid > .span-17,
@@ -413,9 +396,8 @@ wrap-reverse,
   grid-column: auto/span 17;
 }
 
-.grid.cols-7, .grid.columns-7,
-.inline-grid.cols-7,
-.inline-grid.columns-7 {
+.grid[class~=columns-7],
+.inline-grid[class~=columns-7] {
   grid-template-columns: repeat(7, 1fr);
 }
 .grid > .span-18,
@@ -423,9 +405,8 @@ wrap-reverse,
   grid-column: auto/span 18;
 }
 
-.grid.cols-6, .grid.columns-6,
-.inline-grid.cols-6,
-.inline-grid.columns-6 {
+.grid[class~=columns-6],
+.inline-grid[class~=columns-6] {
   grid-template-columns: repeat(6, 1fr);
 }
 .grid > .span-19,
@@ -433,9 +414,8 @@ wrap-reverse,
   grid-column: auto/span 19;
 }
 
-.grid.cols-5, .grid.columns-5,
-.inline-grid.cols-5,
-.inline-grid.columns-5 {
+.grid[class~=columns-5],
+.inline-grid[class~=columns-5] {
   grid-template-columns: repeat(5, 1fr);
 }
 .grid > .span-20,
@@ -443,9 +423,8 @@ wrap-reverse,
   grid-column: auto/span 20;
 }
 
-.grid.cols-4, .grid.columns-4,
-.inline-grid.cols-4,
-.inline-grid.columns-4 {
+.grid[class~=columns-4],
+.inline-grid[class~=columns-4] {
   grid-template-columns: repeat(4, 1fr);
 }
 .grid > .span-21,
@@ -453,9 +432,8 @@ wrap-reverse,
   grid-column: auto/span 21;
 }
 
-.grid.cols-3, .grid.columns-3,
-.inline-grid.cols-3,
-.inline-grid.columns-3 {
+.grid[class~=columns-3],
+.inline-grid[class~=columns-3] {
   grid-template-columns: repeat(3, 1fr);
 }
 .grid > .span-22,
@@ -463,9 +441,8 @@ wrap-reverse,
   grid-column: auto/span 22;
 }
 
-.grid.cols-2, .grid.columns-2,
-.inline-grid.cols-2,
-.inline-grid.columns-2 {
+.grid[class~=columns-2],
+.inline-grid[class~=columns-2] {
   grid-template-columns: repeat(2, 1fr);
 }
 .grid > .span-23,
@@ -473,9 +450,8 @@ wrap-reverse,
   grid-column: auto/span 23;
 }
 
-.grid.cols-1, .grid.columns-1,
-.inline-grid.cols-1,
-.inline-grid.columns-1 {
+.grid[class~=columns-1],
+.inline-grid[class~=columns-1] {
   grid-template-columns: repeat(1, 1fr);
 }
 .grid > .span-24,

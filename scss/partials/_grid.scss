@@ -33,8 +33,9 @@ $gaps: (
 
 	.grid,
 	.inline-grid {
-		&.cols-#{$n},
-		&.columns-#{$n} { grid-template-columns: repeat($n, 1fr); }
+		&[class~="columns-#{$n}"] {
+			grid-template-columns: repeat($n, 1fr);
+		}
 
 		& > .span-#{$i} {
 			grid-column: auto / span $i;
