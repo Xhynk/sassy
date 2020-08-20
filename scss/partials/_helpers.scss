@@ -2,14 +2,14 @@ $directions: left, center, right;
 $trbl: top, right, bottom, left;
 $pm: padding, margin;
 
-@for $dir in $directions {
+@each $dir in $directions {
 	.text-#{$dir} {
 		text-align: #{$dir};
 	}
 }
 
-@for $x in $pm {
-	@for $dir in $trbl {
+@each $x in $pm {
+	@each $dir in $trbl {
 		.#{$x}-0 {
 			#{$x}: 0;
 		}
