@@ -39,9 +39,15 @@ $gaps: (
 		& > .span-#{$i} {
 			grid-column: auto / span $i;
 		}
+	}
+}
 
+// This can't be in the above loop because i+1 spans override i offsets
+@for $i from 1 through $max-columns {
+	.grid,
+	.inline-grid {
 		& > .offset-#{$i} {
-			grid-column-start: $i + 1 !important;
+			grid-column-start: $i + 1;
 		}
 	}
 }
